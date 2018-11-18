@@ -9,7 +9,7 @@ function setup() {
 }
 
 function fetchPhotos() {
-    return fetch('http://localhost:3000/photos').then(res => res.json());
+    return fetch('/photos').then(res => res.json());
 }
 
 function removeFullPhoto() {
