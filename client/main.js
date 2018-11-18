@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', setup);
 function setup() {
     fetchPhotos().then(photos => {
         render(photos);
-        console.log(photos);
+        handleSearchForm(photos);
         zoomPhoto(photos[0]);
     });
 }
@@ -34,6 +34,20 @@ function displayPhotoDetails(photo) {
 
     $div.innerHTML = template;
     $area.appendChild($div);
+}
+
+function handleSearchForm(photos) {
+    const $area = document.getElementById('app');
+    const $input = document.createElement('input');
+    $area.appendChild($input);
+    $input.addEventListener('keypress', () => {
+        let value = $input.value;
+        let filteredPhotos = photos.filter(() => {
+            photos.title.toLowerCase().match(value.toLowerCase());
+            return render(filteredPhotos);
+        });
+    });
+
 }
 
 function zoomPhoto(photo) {
