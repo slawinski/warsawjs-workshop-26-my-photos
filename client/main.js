@@ -40,14 +40,13 @@ function handleSearchForm(photos) {
     const $area = document.getElementById('app');
     const $input = document.createElement('input');
     $area.appendChild($input);
+
     $input.addEventListener('keypress', () => {
         let value = $input.value;
-        let filteredPhotos = photos.filter(() => {
-            photos.title.toLowerCase().match(value.toLowerCase());
-            return render(filteredPhotos);
-        });
+        const filteredPhotos = photos.filter((photo) =>
+            photo.title.toLowerCase().match(value.toLowerCase()));
+        render(filteredPhotos);
     });
-
 }
 
 function zoomPhoto(photo) {
@@ -60,7 +59,7 @@ function zoomPhoto(photo) {
     displayPhotoDetails(photo);
 }
 
-function render(photos) {
+function render(photos = []) {
     const $area = document.getElementById('app');
     photos.forEach(photo => {
         const $image = document.createElement('img');
