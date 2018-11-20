@@ -12,6 +12,12 @@ Dostępne na stronie trenera:
 Dostępny w projekcie trenera:
 <https://github.com/piecioshka/warsawjs-workshop-26-my-photos/>
 
+## TODOs
+
+❌ Search field\
+❌ Responsiveness\
+❌ Styling
+
 ## License
 
 [The MIT License](http://piecioshka.mit-license.org) @ 2018
