@@ -14,9 +14,9 @@ Dostępny w projekcie trenera:
 
 ## TODOs
 
-❌ Search field\
-❌ Responsiveness\
-❌ Styling
+✅ Brutalize styling\
+✅ Search field\
+❌ Responsiveness
 
 ## License
 
