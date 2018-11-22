@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', setup);
 function setup() {
     const $area = document.getElementById('app');
     $area.classList.add('red');
+    $area.style.height = '100vh';
     renderHeader($area);
     fetchPhotos().then((photos) => {
         renderGallery(photos, $area);
@@ -16,6 +17,7 @@ function renderHeader($area) {
     $container.classList.add('container');
     const $header = document.createElement('h1');
     $header.classList.add('brutal-text');
+    $header.style.margin = '0';
     const $title = document.createTextNode('Brutal Photo Gallery');
     $area.appendChild($container);
     $container.appendChild($header);
@@ -53,7 +55,7 @@ function handleSearchForm(photos, $area) {
             const authorMatch = photo.author.toLowerCase().match(value);
             return titleMatch || authorMatch;
         });
-        zoomPhoto(filteredPhotos);
+        zoomPhoto(filteredPhotos, $area);
     });
 }
 
@@ -76,7 +78,7 @@ function renderGallery(photos, $area) {
         const $image = document.createElement('img');
         $image.setAttribute('src', photo.thumb);
         $image.addEventListener('click', () => {
-            zoomPhoto(photo);
+            zoomPhoto(photo, $area);
         });
         $container.appendChild($image);
     });
@@ -94,8 +96,6 @@ function zoomPhoto(photo, $area) {
     $container.classList.add('container');
     $area.appendChild($container);
     removeFullPhoto('.full');
-    const $text = 'The Zoomed Photo';
-    renderSubtitle($text, $container);
     const $photoContainer = document.createElement('div');
     $photoContainer.style.position = 'relative';
     $container.appendChild($photoContainer);
