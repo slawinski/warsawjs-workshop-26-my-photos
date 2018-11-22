@@ -42,7 +42,9 @@ function handleSearchForm(photos, $area) {
     const $text = 'The Search Field';
     renderSubtitle($text, $container);
     const $input = document.createElement('input');
+    $input.classList.add('border', 'border-dashed-thin', 'blue-text', 'banana', 'bigger');
     $container.appendChild($input);
+    renderButton($container);
 
     $input.addEventListener('keypress', () => {
         let value = $input.value.toLowerCase();
@@ -54,6 +56,15 @@ function handleSearchForm(photos, $area) {
         zoomPhoto(filteredPhotos);
     });
 }
+
+function renderButton($container) {
+    const $button = document.createElement('button');
+    $button.classList.add('glitch', 'black', 'yellow-text', 'flow-text');
+    const $text = document.createTextNode('Search');
+    $button.appendChild($text);
+    $container.appendChild($button);
+}
+
 
 function renderGallery(photos, $area) {
     const $container = document.createElement('div');
