@@ -14,10 +14,9 @@ Dostępny w projekcie trenera:
 
 ## TODOs
 
-❌ Search field\
+✅ Search field (title, author)\
 ✅ Brutalize styling\
-❌ Responsiveness\
-✅ Brake the app
+❌ Responsiveness
 
 ## License
 
